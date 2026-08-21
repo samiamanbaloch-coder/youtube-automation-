@@ -1,0 +1,20 @@
+name: Generate first YouTube script
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create a sample script
+        run: |
+          echo "TITLE: 3 surprising facts about space"
+          echo ""
+          echo "SCRIPT:"
+          echo "Fact one: A day on Venus is longer than a year on Venus."
+          echo "Fact two: Space is completely silent because sound needs air."
+          echo "Fact three: Neutron stars are incredibly dense."
+          echo "" 
+          echo "Follow for more amazing facts!"
