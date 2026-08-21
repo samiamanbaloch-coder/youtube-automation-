@@ -1,4 +1,4 @@
-name: Generate first YouTube script
+name: Generate YouTube script
 
 on:
   workflow_dispatch:
@@ -8,13 +8,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Create a sample script
+      - name: Create a random YouTube script
         run: |
-          echo "TITLE: 3 surprising facts about space"
+          choice=$((RANDOM % 3))
+
+          if [ "$choice" -eq 0 ]; then
+            echo "TITLE: 3 surprising facts about space"
+            echo ""
+            echo "SCRIPT:"
+            echo "Fact one: A day on Venus is longer than a year on Venus."
+            echo "Fact two: Space is silent because sound needs air."
+            echo "Fact three: Neutron stars are incredibly dense."
+          elif [ "$choice" -eq 1 ]; then
+            echo "TITLE: 3 strange facts about the human brain"
+            echo ""
+            echo "SCRIPT:"
+            echo "Fact one: Your brain uses about 20 percent of your body's energy."
+            echo "Fact two: The brain itself cannot feel pain."
+            echo "Fact three: Your brain changes throughout your life."
+          else
+            echo "TITLE: 3 mysteries from ancient Egypt"
+            echo ""
+            echo "SCRIPT:"
+            echo "Fact one: The pyramids were built with extraordinary planning."
+            echo "Fact two: Many tombs still hold unanswered questions."
+            echo "Fact three: Ancient Egyptians used picture writing called hieroglyphs."
+          fi
+
           echo ""
-          echo "SCRIPT:"
-          echo "Fact one: A day on Venus is longer than a year on Venus."
-          echo "Fact two: Space is completely silent because sound needs air."
-          echo "Fact three: Neutron stars are incredibly dense."
-          echo "" 
           echo "Follow for more amazing facts!"
